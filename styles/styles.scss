@@ -1,0 +1,15 @@
+@import 'reset';
+
+@import 'header';
+
+@import 'productSection';
+
+body{
+    font-family:'Arial';
+    font-style: normal;
+    color: black;
+}
+.section{
+    width: 1296px;
+    margin: 0 auto;
+}
