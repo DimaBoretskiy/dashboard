@@ -1,11 +1,11 @@
-<a href="/" class="product">
+<a href="{{ announcement?.link ?? 'net name'}}" class="product">
     <div class = "imageWrapper">
-        <img src="assets/img/cards/guitar.png" alt="Гитара" class="productImage"/>
+        <img src="{{ announcement?.image ?? '../../../../../assets/img/shared/nophoto.jpeg'}}" alt="{{ announcement?.title ?? 'net name'}}" class="productImage"/>
     </div>
     <div class="productInfo">
-        <p class="productTitle">Гитара</p>
-        <p class="productPrice">20 000 &#8381;</p>
-        <p class="productLocation">Москва, Ленинский проспект</p>
-        <p class="productDate">21.01.18</p>
+        <p class="productTitle">{{ announcement?.title ?? 'Нет названия'}}</p>
+        <p class="productPrice">{{ announcement?.price ?? 'Цена не указана'}} &#8381;</p>
+        <p class="productLocation">{{ announcement?.location ?? 'Локация не установлена'}}</p>
+        <p class="productDate">{{ announcement?.date ?? 'Дата не установлена'}}</p>
     </div>
 </a>
