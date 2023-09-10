@@ -1,0 +1,111 @@
+import { Component } from '@angular/core';
+import { Announcement } from 'src/app/core/models/announcement.model';
+
+@Component({
+  selector: 'app-recommended',
+  templateUrl: './recommended.component.html',
+  styleUrls: ['./recommended.component.scss']
+})
+export class RecommendedComponent {
+  announcements: Announcement[] = [
+    {
+      title: 'Гитара Fender',
+      desc: "Продаю гитару Fender",
+      image: '../assets/img/cards/guitar.png',
+      price: '20 000',
+      location: 'Москва, Ленина, 33',
+      date: '28.03.2023',
+      link: 'url',
+    },
+    {
+      title: 'Гитара Fender',
+      desc: "Продаю гитару Fender",
+      image: '../assets/img/cards/guitar.png',
+      price: '20 000',
+      location: 'Москва, Ленина, 33',
+      date: '28.03.2023',
+      link: 'url',
+    },
+    {
+      title: 'Гитара Fender',
+      desc: "Продаю гитару Fender",
+      image: '../assets/img/cards/guitar.png',
+      price: '20 000',
+      location: 'Москва, Ленина, 33',
+      date: '28.03.2023',
+      link: 'url',
+    },
+    {
+      title: 'Гитара Fender',
+      desc: "Продаю гитару Fender",
+      image: '../assets/img/cards/guitar.png',
+      price: '20 000',
+      location: 'Москва, Ленина, 33',
+      date: '28.03.2023',
+      link: 'url',
+    },
+    {
+      title: 'Гитара Fender',
+      desc: "Продаю гитару Fender",
+      image: '../assets/img/cards/guitar.png',
+      price: '20 000',
+      location: 'Москва, Ленина, 33',
+      date: '28.03.2023',
+      link: 'url',
+    },
+    {
+      title: 'Гитара Fender',
+      desc: "Продаю гитару Fender",
+      image: '../assets/img/cards/guitar.png',
+      price: '20 000',
+      location: 'Москва, Ленина, 33',
+      date: '28.03.2023',
+      link: 'url',
+    },
+    {
+      title: 'Гитара Fender',
+      desc: "Продаю гитару Fender",
+      image: '../assets/img/cards/guitar.png',
+      price: '20 000',
+      location: 'Москва, Ленина, 33',
+      date: '28.03.2023',
+      link: 'url',
+    },
+    {
+      title: 'Гитара Fender',
+      desc: "Продаю гитару Fender",
+      image: '../assets/img/cards/guitar.png',
+      price: '20 000',
+      location: 'Москва, Ленина, 33',
+      date: '28.03.2023',
+      link: 'url',
+    },
+    {
+      title: 'Гитара Fender',
+      desc: "Продаю гитару Fender",
+      image: '../assets/img/cards/guitar.png',
+      price: '20 000',
+      location: 'Москва, Ленина, 33',
+      date: '28.03.2023',
+      link: 'url',
+    },
+    {
+      title: 'Гитара Fender',
+      desc: "Продаю гитару Fender",
+      image: '../assets/img/cards/guitar.png',
+      price: '20 000',
+      location: 'Москва, Ленина, 33',
+      date: '28.03.2023',
+      link: 'url',
+    },
+    {
+      title: 'Гитара Fender',
+      desc: "Продаю гитару Fender",
+      image: '../assets/img/cards/guitar.png',
+      price: '20 000',
+      location: 'Москва, Ленина, 33',
+      date: '28.03.2023',
+      link: 'url',
+    },
+  ] 
+}
