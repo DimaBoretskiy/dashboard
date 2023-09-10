@@ -1,16 +1,17 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
-import { ProductItemComponent } from './components/product-item/product-item.component';
+import { HeaderComponent } from './shared/components/header/header.component';
+import { AppRoutingModule } from './app-routing.module';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    ProductItemComponent,
   ],
   imports: [
+    AppRoutingModule,
     BrowserModule,
   ],
   providers: [],

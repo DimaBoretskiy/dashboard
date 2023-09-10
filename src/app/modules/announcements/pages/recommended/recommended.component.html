@@ -1,0 +1,8 @@
+<h3 class="pageTitle">
+    Рекомендации для вас
+</h3>
+<div class="productsWrapper" >
+    <ng-container *ngFor="let item of announcements">
+           <app-product-item [announcement]="item"></app-product-item>
+       </ng-container>
+       </div>
