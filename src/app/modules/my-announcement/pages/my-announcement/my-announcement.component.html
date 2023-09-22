@@ -1,0 +1,13 @@
+
+<div class="containerTitle">
+    Мои объявления
+</div>
+    <div class="announcements-grid">
+            <a class="new-announcement">
+                <img class="newAnnouncementImg" src="../../../../../assets/img/shared/plus.svg" alt=""> 
+              <p class="new-announcement__text">Новое объявление</p>
+            </a>
+            <ng-container *ngFor="let item of listItem">
+                <app-product-item [announcement]="item"></app-product-item>
+            </ng-container>
+    </div>
