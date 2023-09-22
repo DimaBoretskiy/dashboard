@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, NgModule } from '@angular/core';
 import { Announcement } from 'src/app/core/models/announcement.model';
 
 @Component({
@@ -8,4 +8,14 @@ import { Announcement } from 'src/app/core/models/announcement.model';
 })
 export class ProductItemComponent {
   @Input() announcement: Announcement | null = null;
+}
+
+@NgModule({
+  declarations: [ProductItemComponent],
+  exports: [ProductItemComponent],
+  imports: [],
+})
+
+export class ProductsItemComponentModule {
+
 }
