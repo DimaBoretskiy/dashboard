@@ -10,6 +10,13 @@ const routes: Routes = [
         (m) => m.AnnouncementsModule
       ),
   },
+  {
+    path: 'my-announcement',
+    loadChildren: () =>
+      import('./modules/my-announcement/my-announcement.module').then(
+        (m) => m.MyAnnouncementModule
+      ),
+  },
 ];
 
 @NgModule({
