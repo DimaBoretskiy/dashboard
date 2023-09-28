@@ -1,1 +1,5 @@
-<p>create-announcement works!</p>
+<form (ngSubmit)="onSubmit()" [formGroup] = "createForm">
+    <input class="field"formControlName="name">
+    <textarea class="field" formControlName="desc" name="" id="" cols="30" rows="10"></textarea>
+    <button type="submit">Создать</button>
+</form>
