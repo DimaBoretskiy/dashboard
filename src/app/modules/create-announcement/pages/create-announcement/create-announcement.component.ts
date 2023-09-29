@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { CategoryService } from '@services/category.service';
 import { TreeNode } from 'primeng/api';
 import { FileSelectEvent } from 'primeng/fileupload';
+import { ICategory } from 'src/app/core/models/category.modules';
 
 @Component({
   selector: 'app-create-announcement',
@@ -9,14 +11,14 @@ import { FileSelectEvent } from 'primeng/fileupload';
   styleUrls: ['./create-announcement.component.scss']
 })
 
-export class CreateAnnouncementComponent {
+export class CreateAnnouncementComponent implements OnInit{
 //добавил переменную/поле с типом FormGroup
   createForm!: FormGroup 
-  categories!: TreeNode[] 
+  
+  categoriesData!: ICategory[] 
   images = new Set<File>();
-
-  constructor() {
-    this.categories = [{label:'Автомобили',key:'auto'}]
+  categories!: TreeNode[];
+  constructor( private _categoryService: CategoryService) {
     this.createForm = new FormGroup({
       
       name: new FormControl<string | null>(null, Validators.required),
@@ -47,6 +49,16 @@ export class CreateAnnouncementComponent {
   onImageRemove(imageToDelete: { file: File }) {
     this.images.delete(imageToDelete.file);
   }
- 
+  ngOnInit(): void {
+    this._categoryService.getCategories().subscribe((categories) => {
+     this.categoriesData = categories
+      this.categories = categories.map((item: ICategory)=>{
+        return  {
+          label: item.name,
+          key: item.name
+        }
+      })
+    });
+  }
 
 }
