@@ -4,10 +4,10 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'create-announcement',
     loadChildren: () =>
-      import('./modules/announcements/announcements.module').then(
-        (m) => m.AnnouncementsModule
+      import('./modules/create-announcement/create-announcement.module').then(
+        (m) => m.CreateAnnouncementModule
       ),
   },
   {
@@ -15,6 +15,13 @@ const routes: Routes = [
     loadChildren: () =>
       import('./modules/my-announcement/my-announcement.module').then(
         (m) => m.MyAnnouncementModule
+      ),
+  },
+  {
+    path: '',
+    loadChildren: () =>
+      import('./modules/announcements/announcements.module').then(
+        (m) => m.AnnouncementsModule
       ),
   },
 ];

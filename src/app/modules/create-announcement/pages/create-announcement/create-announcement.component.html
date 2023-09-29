@@ -1,0 +1,77 @@
+<div class="pageTitle">
+     Новое объявление
+</div>
+<form (ngSubmit)="onSubmit()" [formGroup] = "createForm">
+    <div class="field">
+        <label class="fieldLabel" >Название объявления<sup class="fieldStar">*</sup></label>
+        <p-treeSelect
+        [options]="categories"
+        aria-labelledby="category-label"
+        class="fieldInput"
+        containerStyleClass="w-full"
+        formControlName="category"
+        placeholder="Нажмите, чтобы выбрать">
+      </p-treeSelect>
+    </div>
+
+    <div class="field">
+        <label class="fieldLabel" for="name">Название объявления<sup class="fieldStar">*</sup></label>
+        <input id="name" placeholder="Название объявления" class="fieldInput"formControlName="name">
+        <div class="fieldError" 
+        *ngIf="createForm.get('name')?.errors?.['required'] &&
+        createForm.get('name')?.touched"
+        >Заполните поле</div>
+    </div>
+    <div class="field">
+        <label class="fieldLabel" for="desc">Описание<sup class="fieldStar">*</sup></label>
+        <textarea class="fieldInput fieldDesc" placeholder="Расскажите подробнее о товаре или услуге" formControlName="desc" name="" id=""  ></textarea>
+        <div class="fieldError" 
+        *ngIf="createForm.get('desc')?.errors &&
+        createForm.get('desc')?.touched">Проверьте корректность поля</div>
+    </div>
+    
+    <div class="field">
+        <label class="fieldLabel" for="location">Адрес<sup class="fieldStar">*</sup></label>
+        <input id="location" placeholder="Адрес" class="fieldInput"formControlName="location">
+        <div class="fieldError" 
+        *ngIf="createForm.get('location')?.errors &&
+        createForm.get('location')?.touched">Заполните поле</div>
+    </div>
+    <p-fileUpload
+    (onRemove)="onImageRemove($event)"
+    (onSelect)="onImageSelect($event)"
+    [customUpload]="true"
+    [fileLimit]="4"
+    [multiple]="true"
+    [showCancelButton]="false"
+    [showUploadButton]="false"
+    accept=".jpg,.jpeg,.png,.jfif"
+    chooseIcon="pi pi-images"
+    chooseLabel="Добавить картинки"
+    class="fileUpload">
+    <ng-template pTemplate="toolbar">
+        <div class="file-upload-label">
+          Максимум 10 картинки в формате jpg, png
+        </div>
+      </ng-template>
+  </p-fileUpload>
+    
+    <div class="field">
+        <label class="fieldLabel" for="price">Цена</label>
+        <p-inputNumber
+        [min]="0"
+        [style]="{ width: '100%' }"
+        class="price"
+        currency="RUB"
+        formControlName="price"
+        id="price"
+        locale="en-US"
+        mode="currency">
+      </p-inputNumber>
+        <div class="fieldError" 
+        *ngIf="createForm.get('price')?.errors &&
+        createForm.get('price')?.touched">Заполните поле</div>
+    </div>
+    <button class="formButton" type="submit">Создать</button>
+    
+</form>
