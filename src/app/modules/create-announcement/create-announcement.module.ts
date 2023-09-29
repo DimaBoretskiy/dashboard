@@ -4,6 +4,10 @@ import { CreateAnnouncementComponent } from './pages/create-announcement/create-
 import { CreateAnnouncementRoutingModule } from './create-announcement-routing.module';
 
 import { ReactiveFormsModule } from '@angular/forms';
+import { TreeSelectModule } from 'primeng/treeselect';
+import { FileUploadModule } from 'primeng/fileupload';
+import { NgIf } from '@angular/common';
+import { InputNumberModule } from 'primeng/inputnumber';
 
 
 @NgModule({
@@ -13,7 +17,11 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     CreateAnnouncementRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TreeSelectModule,
+    FileUploadModule,
+    NgIf,
+    InputNumberModule
   ]
 })
 export class CreateAnnouncementModule { }
