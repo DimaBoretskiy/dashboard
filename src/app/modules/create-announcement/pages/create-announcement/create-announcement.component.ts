@@ -3,7 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CategoryService } from '@services/category.service';
 import { TreeNode } from 'primeng/api';
 import { FileSelectEvent } from 'primeng/fileupload';
-import { ICategory } from 'src/app/core/models/category.modules';
+import { ICategory } from 'src/app/core/models/category.model';
 
 @Component({
   selector: 'app-create-announcement',
