@@ -1,0 +1,81 @@
+.formWrapper {
+    width: 100%;
+    max-width: 856px;
+    & + & {
+        margin-top: 54px;
+    }
+}
+.fieldInput {
+    border: 1px solid #CBD5E1;
+    width: 100%;
+    max-width: 856px;
+    padding: 12px;
+    border-radius: 4px;
+    &::placeholder {
+        color: #64748B;
+    }
+}
+
+.pageTitle {
+    margin-bottom: 24px;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+}
+
+.fieldLabel{
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.formButton {
+    background-color: #3B82F6;
+    align-items: center;
+    display: flex;
+    gap: 4px;
+    padding: 6px 12px;
+    color: #fff;
+    border-radius: 4px;
+    transition: background-color 0.25s;
+    margin-top: 24px;
+    &:hover {
+        background-color: #2d65bf;
+      }
+      &:disabled{
+        opacity: .8;
+      }
+}
+
+.fieldError {
+    color: #EF4444;
+    margin-top: 4px;
+}
+
+.fieldWrapper {
+    display: flex;
+    gap: 24px;
+    .field{
+        width: 100%;
+    }
+
+}
+.fieldPhone ::ng-deep {
+   .p-inputtext .p-component .p-element .p-inputmask{
+@extend .fieldInput
+   }
+
+   .p-element{
+    @extend .fieldInput;
+   }
+  }
+
+  
+  

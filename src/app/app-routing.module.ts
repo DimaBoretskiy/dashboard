@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 
 const routes: Routes = [
+
   {
     path: 'create-announcement',
     loadChildren: () =>
@@ -15,6 +16,13 @@ const routes: Routes = [
     loadChildren: () =>
       import('./modules/my-announcement/my-announcement.module').then(
         (m) => m.MyAnnouncementModule
+      ),
+  },
+  {
+    path: 'settings-page',
+    loadChildren: () =>
+      import('./modules/settings-page/settings-page.module').then(
+        (m) => m.SettingsPageModule
       ),
   },
   {

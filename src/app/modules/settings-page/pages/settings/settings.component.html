@@ -1,0 +1,69 @@
+<div class="pageTitle">
+    Настройки
+</div>
+<form (ngSubmit)="onChangeSettings()" class="formWrapper" [formGroup] = "settingsForm">
+    <div class="fieldWrapper">
+   <div class="field">
+       <label class="fieldLabel" for="name">Имя</label>
+       <input id="name" placeholder="Имя" class="fieldInput"formControlName="name">
+       <div class="fieldError" 
+       *ngIf="settingsForm.get('name')?.errors?.['required'] &&
+       settingsForm.get('name')?.touched"
+       >Заполните поле</div>
+   </div>
+   <div class="field">
+       <label class="fieldLabel" for="phone">Телефон</label>
+       <p-inputMask
+       class="fieldPhone"
+       formControlName="phone"
+       id="phone"
+       mask="7 999 999-99-99"
+       placeholder="7 ___ ___-__-__">
+        </p-inputMask>
+   </div>
+    </div>
+   
+   <div class="field">
+       <label class="fieldLabel" for="location">Адрес</label>
+       <input id="location" placeholder="Адрес" class="fieldInput"formControlName="location">
+       <div class="fieldError" 
+       *ngIf="settingsForm.get('location')?.errors &&
+       settingsForm.get('location')?.touched">Заполните поле</div>
+   </div>
+   
+   <button
+   [disabled]="!(settingsForm.get('name')?.touched || settingsForm.get('name')?.touched || settingsForm.get('location')?.touched)"
+   class="formButton" type="submit">Сохранить</button>
+   
+</form>
+
+<div class="formWrapper">
+    <div class="pageTitle">
+        Смена пароля
+    </div>
+    
+    <form (ngSubmit)="onChangePassword()" class="formWrapper" [formGroup] = "passwordForm">
+       <div class="field">
+           <label class="fieldLabel" for="password">Текущий пароль</label>
+           <input id="password" type="password" placeholder="Пароль" class="fieldInput"formControlName="password">
+           <div class="fieldError" 
+           *ngIf="passwordForm.get('password')?.errors?.['required'] &&
+           passwordForm.get('password')?.touched"
+           >Заполните поле</div>
+        </div>
+       <div class="field">
+           <label class="fieldLabel" for="newPassword">Новый пароль</label>
+           <input id="newPassword" type="password" placeholder="Новый пароль" class="fieldInput"formControlName="newPassword">
+           <div class="fieldError" 
+           *ngIf="passwordForm.get('newPassword')?.errors?.['required'] &&
+           passwordForm.get('newPassword')?.touched"
+           >Заполните поле</div>
+        </div>
+       
+       
+       <button
+       [disabled]="passwordForm.invalid"
+       class="formButton" type="submit">Сохранить</button>
+       
+    </form>
+</div>
