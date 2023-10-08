@@ -3,9 +3,9 @@
     <div *ngIf="!isLoading; else loading" class="wrapper">
         <div class="leftColumn">
             <h3 class="title">{{ announcement?.name ?? 'Нет названия'}}</h3>
-            <img class="preview" src="{{ announcement?.images?.[0] ?? ''}}" alt="">
-            <div class="thumbs" *ngFor="let item of announcement?.images">
-                <div class="thumb">
+            <img class="preview" src="{{ preview ?? ''}}" alt="">
+            <div class="thumbs" *ngFor="let item of announcement?.images ; index as i">
+                <div class="thumb"  (click)="togglePreview(i)">
                     <img class="thumbImage" src="{{item}}" alt="">
                 </div>
             </div>
@@ -14,10 +14,15 @@
             <div class="price">
                 {{ announcement?.cost ?? 'Нет названия'}} ₽
             </div>
-            <button class="btnPhone">
+            <button class="btnPhone" (click)="togglePhone()">
                 <img src="../../../../../assets/img/shared/Icon.svg" alt="">
-                Показать номер телефона
+                {{isShowPhone ? 'Hide' : 'Показать номер телефона'}}
+      
             </button>
+            <div *ngIf="isShowPhone">
+                {{ announcement?.phone ?? 'Нет названия'}}
+
+            </div>
             <div class="location">
                 <p class="infoTitle">
                     Адрес
