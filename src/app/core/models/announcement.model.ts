@@ -7,4 +7,3 @@ export interface IAnnouncement {
   imagesIds: string [],
   cost: number
 }
-

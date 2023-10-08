@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Input, NgModule, OnInit } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { ImagesService } from '@services/images/images.service';
 import { IAnnouncement } from 'src/app/core/models/announcement.model';
 
@@ -23,7 +24,7 @@ export class ProductItemComponent implements OnInit {
 @NgModule({
   declarations: [ProductItemComponent],
   exports: [ProductItemComponent],
-  imports: [],
+  imports: [RouterModule],
 })
 
 export class ProductsItemComponentModule {
