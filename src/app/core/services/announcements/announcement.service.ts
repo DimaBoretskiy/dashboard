@@ -9,19 +9,26 @@ import { IAnnouncement } from '../../models/announcement.model';
 
 
 export class AnnouncementService {
-  private _baseUrl: string = '/api/Advert/search' 
-  constructor(private _http: HttpClient) {
+  private _baseUrl: string = '/api/Advert' 
+  constructor(private _http: HttpClient,) {
   }
 
 
   getAnnouncements(body: {search?:string, showNonActive?: boolean, category?: string} = {}
  ): Observable<any> {
-    return this._http.post<IAnnouncement[]>(`${this._baseUrl}`,body).pipe(
+    return this._http.post<IAnnouncement[]>(`${this._baseUrl}/search`,body).pipe(
       map((announcements) =>{
         return announcements
       })
     )
   }
-
+  getAnnouncement(id:string): Observable<any> {
+       return this._http.get<IAnnouncement[]>(`${this._baseUrl}/${id}`).pipe(
+         map((announcement) =>{
+           return announcement
+         })
+       )
+     }
+   
 
 }

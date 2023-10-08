@@ -1,50 +1,51 @@
 
 
-<div class="wrapper">
-    <div class="leftColumn">
-        <h3 class="title">Name</h3>
-        <img class="preview" src="../../../../../assets/img/cards/preview.png" alt="">
-        <div class="thumbs">
-            <div class="thumb">
-                <img class="thumbImage" src="../../../../../assets/img/cards/preview.png" alt="">
-            </div>
-            <div class="thumb">
-                <img class="thumbImage" src="../../../../../assets/img/cards/preview.png" alt="">
-            </div>
-            <div class="thumb">
-                <img class="thumbImage" src="../../../../../assets/img/cards/preview.png" alt="">
+    <div *ngIf="!isLoading; else loading" class="wrapper">
+        <div class="leftColumn">
+            <h3 class="title">{{ announcement?.name ?? 'Нет названия'}}</h3>
+            <img class="preview" src="{{ preview ?? ''}}" alt="">
+            <div class="thumbs" *ngFor="let item of announcement?.images ; index as i">
+                <div class="thumb"  (click)="togglePreview(i)">
+                    <img class="thumbImage" src="{{item}}" alt="">
+                </div>
             </div>
         </div>
-    </div>
-    <div class="rightColumn">
-        <div class="price">
-            80 000 ₽
-        </div>
-        <button class="btnPhone">
-            <img src="../../../../../assets/img/shared/Icon.svg" alt="">
-            Показать номер телефона
-        </button>
-        <div class="location">
-            <p class="infoTitle">
-                Адрес
-            </p>
-            <p class="text">
-                Севастополь, ул. Гоголя, 33Б
-            </p>
-            <button class="openMap">
-                Показать на карте
-                <img src="../../../../../assets/img/shared/arrow-up-right-square.svg" alt="">
+        <div class="rightColumn">
+            <div class="price">
+                {{ announcement?.cost ?? 'Нет названия'}} ₽
+            </div>
+            <button class="btnPhone" (click)="togglePhone()">
+                <img src="../../../../../assets/img/shared/Icon.svg" alt="">
+                {{isShowPhone ? 'Hide' : 'Показать номер телефона'}}
+      
             </button>
+            <div *ngIf="isShowPhone">
+                {{ announcement?.phone ?? 'Нет названия'}}
 
-        </div>
-        <div class="description">
-            <p class="infoTitle">
-                Описание
-            </p>
-            <p class="text">
-                Продается MacBook Pro 13 8/256
-Сам ноутбук в отличном состоянии, количество циклов перезарядки 123, в комплекте: коробка,ноутбук,блок,кабель и чек!
-            </p>
+            </div>
+            <div class="location">
+                <p class="infoTitle">
+                    Адрес
+                </p>
+                <p class="text">
+                    {{ announcement?.location ?? 'Нет adres'}}
+                </p>
+                <button class="openMap">
+                    Показать на карте
+                    <img src="../../../../../assets/img/shared/arrow-up-right-square.svg" alt="">
+                </button>
+    
+            </div>
+            <div class="description">
+                <p class="infoTitle">
+                    Описание
+                </p>
+                <p class="text">
+                    {{ announcement?.description ?? 'Нет desc'}}
+                </p>
+            </div>
         </div>
     </div>
-</div>
+
+<ng-template #loading>Loading</ng-template>
+
