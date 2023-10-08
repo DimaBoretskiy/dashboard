@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Announcement } from './core/models/announcement.model';
+
 
 @Component({
   selector: 'app-root',

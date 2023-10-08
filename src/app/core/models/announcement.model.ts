@@ -1,9 +1,10 @@
-export interface Announcement {
-  title?: string;
-  desc?: string;
-  image?: string;
-  price?: string;
-  location?: string;
-  date: string;
-  link: string;
+export interface IAnnouncement {
+  id: string
+  name: string,
+  location: string,
+  createdAt: string
+  isActive: boolean
+  imagesIds: string [],
+  cost: number
 }
+

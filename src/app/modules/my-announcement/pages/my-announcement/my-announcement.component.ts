@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Announcement } from 'src/app/core/models/announcement.model';
+import { IAnnouncement } from 'src/app/core/models/announcement.model';
+
 
 @Component({
   selector: 'app-my-announcement',
@@ -7,105 +8,5 @@ import { Announcement } from 'src/app/core/models/announcement.model';
   styleUrls: ['./my-announcement.component.scss']
 })
 export class MyAnnouncementComponent {
-  listItem: Announcement[] = [
-    {
-      title: 'Гитара Fender',
-      desc: "Продаю гитару Fender",
-      image: '../assets/img/cards/guitar.png',
-      price: '20 000',
-      location: 'Москва, Ленина, 33',
-      date: '28.03.2023',
-      link: 'url',
-    },
-    {
-      title: 'Гитара Fender',
-      desc: "Продаю гитару Fender",
-      image: '../assets/img/cards/guitar.png',
-      price: '20 000',
-      location: 'Москва, Ленина, 33',
-      date: '28.03.2023',
-      link: 'url',
-    },
-    {
-      title: 'Гитара Fender',
-      desc: "Продаю гитару Fender",
-      image: '../assets/img/cards/guitar.png',
-      price: '20 000',
-      location: 'Москва, Ленина, 33',
-      date: '28.03.2023',
-      link: 'url',
-    },
-    {
-      title: 'Гитара Fender',
-      desc: "Продаю гитару Fender",
-      image: '../assets/img/cards/guitar.png',
-      price: '20 000',
-      location: 'Москва, Ленина, 33',
-      date: '28.03.2023',
-      link: 'url',
-    },
-    {
-      title: 'Гитара Fender',
-      desc: "Продаю гитару Fender",
-      image: '../assets/img/cards/guitar.png',
-      price: '20 000',
-      location: 'Москва, Ленина, 33',
-      date: '28.03.2023',
-      link: 'url',
-    },
-    {
-      title: 'Гитара Fender',
-      desc: "Продаю гитару Fender",
-      image: '../assets/img/cards/guitar.png',
-      price: '20 000',
-      location: 'Москва, Ленина, 33',
-      date: '28.03.2023',
-      link: 'url',
-    },
-    {
-      title: 'Гитара Fender',
-      desc: "Продаю гитару Fender",
-      image: '../assets/img/cards/guitar.png',
-      price: '20 000',
-      location: 'Москва, Ленина, 33',
-      date: '28.03.2023',
-      link: 'url',
-    },
-    {
-      title: 'Гитара Fender',
-      desc: "Продаю гитару Fender",
-      image: '../assets/img/cards/guitar.png',
-      price: '20 000',
-      location: 'Москва, Ленина, 33',
-      date: '28.03.2023',
-      link: 'url',
-    },
-    {
-      title: 'Гитара Fender',
-      desc: "Продаю гитару Fender",
-      image: '../assets/img/cards/guitar.png',
-      price: '20 000',
-      location: 'Москва, Ленина, 33',
-      date: '28.03.2023',
-      link: 'url',
-    },
-    {
-      title: 'Гитара Fender',
-      desc: "Продаю гитару Fender",
-      image: '../assets/img/cards/guitar.png',
-      price: '20 000',
-      location: 'Москва, Ленина, 33',
-      date: '28.03.2023',
-      link: 'url',
-    },
-    {
-      title: 'Гитара Fender',
-      desc: "Продаю гитару Fender",
-      image: '../assets/img/cards/guitar.png',
-      price: '20 000',
-      location: 'Москва, Ленина, 33',
-      date: '28.03.2023',
-      link: 'url',
-    },
-  ] 
+  listItem: IAnnouncement[] = []
 }
