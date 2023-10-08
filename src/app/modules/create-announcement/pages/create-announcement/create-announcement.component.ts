@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { CategoryService } from '@services/category.service';
+import { CategoryService } from '@services/categories/category.service';
 import { TreeNode } from 'primeng/api';
 import { FileSelectEvent } from 'primeng/fileupload';
 import { ICategory } from 'src/app/core/models/category.modules';

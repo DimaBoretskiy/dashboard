@@ -1,11 +1,11 @@
-<a href="{{ announcement?.link ?? ''}}" class="product">
+<a href="" class="product">
     <div class = "imageWrapper">
-        <img src="{{ announcement?.image ?? '../../../../../assets/img/shared/nophoto.jpeg'}}" alt="{{ announcement?.title ?? ''}}" class="productImage"/>
+        <img src="../../../../../assets/img/shared/nophoto.jpeg" alt="{{ announcement?.name ?? ''}}" class="productImage"/>
     </div>
     <div class="productInfo">
-        <p class="productTitle">{{ announcement?.title ?? 'Нет названия'}}</p>
-        <p class="productPrice">{{ announcement?.price ?? 'Цена не указана'}} &#8381;</p>
+        <p class="productTitle">{{ announcement?.name ?? 'Нет названия'}}</p>
+        <p class="productPrice">{{ announcement?.cost ?? 'Цена не указана'}} &#8381;</p>
         <p class="productLocation">{{ announcement?.location ?? 'Локация не установлена'}}</p>
-        <p class="productDate">{{ announcement?.date ?? 'Дата не установлена'}}</p>
+        <p class="productDate">{{ announcement?.createdAt ?? 'Дата не установлена'}}</p>
     </div>
 </a>

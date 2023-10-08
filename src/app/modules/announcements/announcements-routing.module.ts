@@ -7,7 +7,7 @@ import { RequestedComponent } from './pages/requested/requested.component';
 
 const routes: Routes = [
   {
-    path: 'requested-announcements/:categoryId',
+    path: 'requested-announcements',
     component: RequestedComponent
   },  
   {

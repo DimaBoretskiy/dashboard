@@ -1,5 +1,5 @@
 import { Component, Input, NgModule } from '@angular/core';
-import { Announcement } from 'src/app/core/models/announcement.model';
+import { IAnnouncement } from 'src/app/core/models/announcement.model';
 
 @Component({
   selector: 'app-product-item',
@@ -7,7 +7,7 @@ import { Announcement } from 'src/app/core/models/announcement.model';
   styleUrls: ['./product-item.component.scss']
 })
 export class ProductItemComponent {
-  @Input() announcement: Announcement | null = null;
+  @Input() announcement: IAnnouncement | null = null;
 }
 
 @NgModule({
